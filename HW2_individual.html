@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+
+<style>
+table {
+  border: 1px solid #666;   
+    width: 100%;
+}
+th {
+  background: #f8f8f8; 
+  font-weight: bold;    
+    padding: 2px;
+}
+</style>
+
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+		var jsondata = [{"Name":"Cristen Oconnell","GPA":3,"GRE_V":150,"GRE_Q":170,"Essay":5,"Recom":1},
+						{"Name":"Marla Provenzano","GPA":4,"GRE_V":165,"GRE_Q":169,"Essay":3,"Recom":2},
+						{"Name":"Cleta Morena","GPA":3.2,"GRE_V":170,"GRE_Q":168,"Essay":2,"Recom":2},
+						{"Name":"Denis Carver","GPA":3.8,"GRE_V":142,"GRE_Q":170,"Essay":1,"Recom":4},
+						{"Name":"Jackeline Wind","GPA":3.1,"GRE_V":140,"GRE_Q":165,"Essay":4,"Recom":5},
+						{"Name":"Olimpia Sage","GPA":3,"GRE_V":160,"GRE_Q":140,"Essay":5,"Recom":2},
+						{"Name":"Shaquana Elwell","GPA":3.8,"GRE_V":169,"GRE_Q":167,"Essay":2,"Recom":3},
+						{"Name":"Xiao Raia","GPA":3.5,"GRE_V":150,"GRE_Q":162,"Essay":3,"Recom":4},
+						{"Name":"Jayme Tomita","GPA":3.8,"GRE_V":141,"GRE_Q":140,"Essay":1,"Recom":5},
+						{"Name":"Nickolas Basham","GPA":3.9,"GRE_V":145,"GRE_Q":170,"Essay":2,"Recom":6}];
+
+	var table_obj = $("#hw2_table");
+    $.each(jsondata, function( index, value ) {
+	  //alert( index + ": " + value.Name );
+	  var table_row = $('<tr>');
+      var table_cell1=$('<td>',{html:value.Name+''+value.GPA+''+value.GRE_V+''+value.GRE_Q+''+value.Essay+''+value.Recom});
+      table_row.append(table_cell1);
+      var table_cell2=$('<td>',{html:value.GPA});
+      table_row.append(table_cell2);
+	  var table_cell3=$('<td>',{html:value.GRE_V});
+      table_row.append(table_cell3);
+	  var table_cell4=$('<td>',{html:value.GRE_Q});
+      table_row.append(table_cell4);
+	  var table_cell5=$('<td>',{html:value.Essay});
+      table_row.append(table_cell5);
+	  var table_cell6=$('<td>',{html:value.Recom});
+      table_row.append(table_cell6);
+      table_obj.append(table_row);
+	});
+
+
+});
+</script>
+</head>
+
+
+
+
+<body>
+<table id="hw2_table">
+ <tr>
+    <th>Name</th>
+    <th>GPA</th>
+     <th>GRE_V</th> 
+     <th>GPA_Q</th> 
+     <th>Essay</th>
+      <th>Recom</th>
+  </tr>
+  
+  </table>
+
+
+</body>
+</html>
