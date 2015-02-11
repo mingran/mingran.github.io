@@ -10,7 +10,7 @@
             tr.append("<td>" + json[i].GRE_Q + "</td>");
             tr.append("<td>" + json[i].Essay+ "</td>");
             tr.append("<td>" + json[i].Recom+ "</td>");
-            $('#hw2table').append(tr); 
+            $('#hwtable').append(tr); 
         }
       
 		});
