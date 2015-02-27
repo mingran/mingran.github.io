@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style>
 
+<style>
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: auto;
@@ -12,7 +12,7 @@ body {
 
 button {
   position: absolute;
-  right: 10px;
+  right: 40px;
   top: 10px;
 }
 
@@ -22,14 +22,13 @@ button {
 .bullet .range.s0 { fill: #eee; }
 .bullet .range.s1 { fill: #ddd; }
 .bullet .range.s2 { fill: #ccc; }
-.bullet .measure.s0 { fill: lightsteelblue; }
-.bullet .measure.s1 { fill: steelblue; }
+.bullet .measure.s0 { fill: blue; }
 .bullet .title { font-size: 14px; font-weight: bold; }
 .bullet .subtitle { fill: #999; }
-
 </style>
+
 <button>Update</button>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="d3/d3.v3.js"></script>
 <script src="bullet.js"></script>
 <script>
 
@@ -72,7 +71,6 @@ d3.json("bullets.json", function(error, data) {
 
 function randomize(d) {
   if (!d.randomizer) d.randomizer = randomizer(d);
-  d.ranges = d.ranges.map(d.randomizer);
   d.markers = d.markers.map(d.randomizer);
   d.measures = d.measures.map(d.randomizer);
   return d;
@@ -86,3 +84,4 @@ function randomizer(d) {
 }
 
 </script>
+</body>
