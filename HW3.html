@@ -65,7 +65,7 @@ d3.json("bullets.json", function(error, data) {
       .text(function(d) { return d.subtitle; });
 
   d3.selectAll("button").on("click", function() {
-    svg.datum(randomize).call(chart.duration(1000)); // TODO automatic transition
+    svg.datum(randomize).call(chart.duration(1000));
   });
 });
 
