@@ -4,12 +4,12 @@
     "subtitle":" Math & Science Score Average",
     "ranges":[230,330,452],
     "measures":[416],
-    "markers":[400]
+    "markers":[452]
   },
   {
     "title":"Australia",
     "subtitle":"Math & Science Score Average",
-    "ranges":[256,416,512],
+    "ranges":[230,330,416],
     "measures":[416],
     "markers":[450]
   }
