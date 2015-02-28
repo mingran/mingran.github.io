@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-
 <style>
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: auto;
   padding-top: 40px;
   position: relative;
-  width: 960px;
+  width: 800px;
 }
 
 button {
@@ -22,25 +22,25 @@ button {
 .bullet .range.s0 { fill: #eee; }
 .bullet .range.s1 { fill: #ddd; }
 .bullet .range.s2 { fill: #ccc; }
-.bullet .measure.s0 { fill: blue; }
+.bullet .measure.s0 { fill: steelblue; }
 .bullet .title { font-size: 14px; font-weight: bold; }
 .bullet .subtitle { fill: #999; }
-</style>
 
+</style>
 <button>Update</button>
-<script type="text/javascript" src="d3/d3.v3.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="bullet.js"></script>
 <script>
 
 var margin = {top: 5, right: 40, bottom: 20, left: 120},
-    width = 960 - margin.left - margin.right,
+    width = 800 - margin.left - margin.right,
     height = 50 - margin.top - margin.bottom;
 
 var chart = d3.bullet()
     .width(width)
     .height(height);
 
-d3.json("bullets.json", function(error, data) {
+d3.json("bulletdata.json", function(error, data) {
   var svg = d3.select("body").selectAll("svg")
       .data(data)
     .enter().append("svg")
