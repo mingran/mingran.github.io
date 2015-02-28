@@ -1,14 +1,14 @@
 [
   {
     "title":"Armenia",
-    "subtitle":" Math and Science Score Average",
+    "subtitle":" Math & Science Score Average",
     "ranges":[230,330,452],
     "measures":[416],
     "markers":[400]
   },
   {
     "title":"Australia",
-    "subtitle":"Math  and Science Score Average",
+    "subtitle":"Math & Science Score Average",
     "ranges":[256,416,512],
     "measures":[416],
     "markers":[450]
