@@ -4,7 +4,7 @@
     "subtitle":"Score Average",
     "ranges":[230,330,430],
     "measures":[350],
-    "markers":[420]
+    "markers":[400]
   },
   {
     "title":"Memory Used",
