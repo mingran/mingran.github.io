@@ -3,8 +3,8 @@
     "title":"Armenia",
     "subtitle":"Score Average",
     "ranges":[230,330,430],
-    "measures":[2200],
-    "markers":[2500]
+    "measures":[350],
+    "markers":[420]
   },
   {
     "title":"Memory Used",
