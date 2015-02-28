@@ -1,7 +1,7 @@
 [
   {
-    "title":"CPU Load",
-    "subtitle":"GHz",
+    "title":"Armenia",
+    "subtitle":"score average",
     "ranges":[1500,2250,3000],
     "measures":[2200],
     "markers":[2500]
