@@ -1,16 +1,16 @@
 [
   {
     "title":"Armenia",
-    "subtitle":"Score Average",
+    "subtitle":" Math and Science Score Average",
     "ranges":[230,330,452],
-    "measures":[380],
+    "measures":[416],
     "markers":[400]
   },
   {
-    "title":"Memory Used",
-    "subtitle":"MBytes",
-    "ranges":[256,512,1024],
-    "measures":[768],
-    "markers":[900]
+    "title":"Australia",
+    "subtitle":"Math  and Science Score Average",
+    "ranges":[256,416,512],
+    "measures":[416],
+    "markers":[450]
   }
 ]
