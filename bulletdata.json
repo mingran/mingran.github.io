@@ -2,22 +2,71 @@
   {
     "title":"Armenia",
     "subtitle":" Math & Science Score Average",
-    "ranges":[230,330,500],
+    "ranges":[249.6,332.8,452],
     "measures":[416],
-    "markers":[452]
+    "markers":[412.8]
   },
   {
     "title":"Australia",
     "subtitle":"Math & Science Score Average",
-    "ranges":[300,430,550],
+    "ranges":[309.6,412.8,516],
     "measures":[516],
     "markers":[516]
   },
   {
-    "title":"Australia",
+    "title":"Austria",
     "subtitle":"Math & Science Score Average",
-    "ranges":[300,430,550],
+    "ranges":[319.2,425.6,508],
+    "measures":[532],
+    "markers":[508]
+  },
+  {
+    "title":"Azerbaijian",
+    "subtitle":"Math & Science Score Average",
+    "ranges":[262.8,350.4,463],
+    "measures":[438],
+    "markers":[463]
+  },
+  {
+    "title":"Bahrain",
+    "subtitle":"Math & Science Score Average",
+    "ranges":[269.4,359.2,436],
+    "measures":[449],
+    "markers":[436]
+  },
+  {
+    "title":"Belgium",
+    "subtitle":" Math & Science Score Average",
+    "ranges":[305.4,407.2,549],
+    "measures":[509],
+    "markers":[549]
+  },
+  {
+    "title":"Chile",
+    "subtitle":"Math & Science Score Average",
+    "ranges":[288,384,462],
+    "measures":[480],
+    "markers":[462]
+  },
+  {
+    "title":"Chiese Taipei_CHN",
+    "subtitle":"Math & Science Score Average",
+    "ranges":[331.8,442.4,591],
+    "measures":[553],
+    "markers":[591]
+  },
+  {
+    "title":"Croatia",
+    "subtitle":"Math & Science Score Average",
+    "ranges":[309.6,412.8,490],
     "measures":[516],
-    "markers":[516]
-  }
+    "markers":[490]
+  },
+  {
+    "title":"Czech Republic",
+    "subtitle":"Math & Science Score Average",
+    "ranges":[321.6,428.8,511],
+    "measures":[536],
+    "markers":[511]
+  },
 ]
