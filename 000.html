@@ -81,7 +81,7 @@ d3.json("exam1.json", function(data) {
   //alert(data[3]["University A"])
 
 	x.domain( data_json.map(function(d) {return d[0];}) ) ;
-	y.domain([0,d3.max(dataset2,function(d){return d[1];})] );
+	y.domain([0,d3.max(data_json,function(d){return d[1];})] );
 	
 	
 
