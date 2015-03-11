@@ -62,7 +62,7 @@ var svg = d3.select("body").append("svg")
 
 d3.json("Senior.json", function(data) {
   x.domain(data.map(function(d) { return d.University; }));
-  y.domain([0, d3(data, function(d) { return d.number; })]);
+  y.domain([0, d3.max(data, function(d) { return d.number; })]);
 
   svg.append("g")
       .attr("class", "x axis")
