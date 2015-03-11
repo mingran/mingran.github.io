@@ -1,11 +1,5 @@
-[
-   
-   {
-      "Year":"Senior",
-      "University A":90,
-      "University B":91,
-      "University C":46,
-      "University D":100,
-      "University E":92
-   }
-] 
+[{"Univeristy":"A","Number":90},
+{"Univeristy":"B","Number":91},
+{"Univeristy":"C","Number":46},
+{"Univeristy":"D","Number":100},
+{"Univeristy":"E","Number":92}]
