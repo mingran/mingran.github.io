@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Compare the number of senior IE students in the five universities</title>
+	<title>Bar Chart Example</title>
 	<script type="text/javascript" src="http://d3js.org/d3.v2.js"></script>
 	
 	<style>
-		.bar.University A { fill: green; }
-		.bar.University B { fill: orange; }
-		.bar.University C { fill: yellow; }
-		.bar.University D { fill: purple; }
-		.bar.University E { fill: black; }
+		.bar.apples { fill: green; }
+		.bar.oranges { fill: orange; }
+		.bar.bananas { fill: yellow; }
+		.bar.plums { fill: purple; }
 	</style>
 
 </head>
@@ -27,14 +26,9 @@
 			.attr("width", w)
 			.attr("height", h);
 	
-		d3.json("https://hivelab.org/static/exam1.json", function(data) {
+		d3.json("bars.json", function(json) {
 	
-			var data = dataset;
-			dataset[3]["University A", "90"] 
-			dataset[3]["University B", "91"]
-			dataset[3]["University C", "46"]
-			dataset[3]["University D", "100"]
-			dataset[3]["University E", "92"]
+			var data = json.items;
 	
 			var max_n = 0;
 			for (var d in data) {
@@ -49,7 +43,7 @@
 				.data(data)
 				.enter()
 				.append("rect")
-				.attr("class", function(d, i) {return "bar " + d.University;})
+				.attr("class", function(d, i) {return "bar " + d.label;})
 				.attr("x", function(d, i) {return 0;})
 				.attr("y", function(d, i) {return dy*i;})
 				.attr("width", function(d, i) {return dx*d.n})
@@ -60,7 +54,7 @@
 				.data(data)
 				.enter()
 				.append("text")
-				.attr("class", function(d, i) {return "label " + d.University;})
+				.attr("class", function(d, i) {return "label " + d.label;})
 				.attr("x", 5)
 				.attr("y", function(d, i) {return dy*i + 15;})
 				.text( function(d) {return d.label + " (" + d.n  + ")";})
