@@ -88,7 +88,7 @@ d3.csv("exam1_Senior.json", function(error, data) {
       .style("fill", "steelblue")
       .attr("x", function(d) { return x(d.University); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.Senior); })
+      .attr("y", function(d) { return y(d.Number); })
       .attr("height", function(d) { return height - y(d.Number); });
 
 });
