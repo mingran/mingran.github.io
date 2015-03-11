@@ -36,7 +36,7 @@
 <script>
 
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 360 - margin.left - margin.right,
+    width = 160 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var x = d3.scale.ordinal()
@@ -60,7 +60,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.tsv("data.tsv", type, function(error, data) {
+d3.json("exam1Senior.json", type, function(error, data) {
   x.domain(data.map(function(d) { return d.University; }));
   y.domain([0, d3.max(data, function(d) { return d.number; })]);
 
