@@ -1,132 +1,71 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Compare the number of senior IE students in the five universities</title>
-
-
-<style>
-.chart {
-    background-color: #eee;
-}
- 
-.chart rect {
-  stroke: white;
-  fill: blue;
-}
- 
-.axis {
-    shape-rendering: crispEdges;
-}
- 
-.x.axis line {
-    stroke: black;
-}
- 
-.y.axis line {
-    stroke: black;
-}
- 
-.axis text {
-    font-size: 12px;
-}
-</style>
-
-
-
-
-
-
-
-<body>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="https://raw.github.com/mbostock/d3/master/d3.v2.min.js"></script>
-    <script src="script.js"></script>
+<html lang="en">
+<head>
+	<title>Compare the number of senior IE students in the five universities</title>
+	<script type="text/javascript" src="http://d3js.org/d3.v2.js"></script>
 	
-<script>
-$( function() {
- 
-    var json = [
-        {
-      "Year":"Senior",
-      "University A":90,
-      "University B":91,
-      "University C":46,
-      "University D":100,
-      "University E":92
-        }
-        ];
-		
-        
+	<style>
+		.bar.University A { fill: green; }
+		.bar.University B  { fill: orange; }
+		.bar.University C  { fill: yellow; }
+		.bar.University D { fill: purple; }
+		.bar.University E { fill: black; }
+	</style>
 
-var results,
-        data = [],
-        chart,
-        bars,
-        margin = 100,
-        w = 8,
-        h = 500,
-        x, y,
-        xAxis, yAxis;
- 
-    results = d3.map( json );
-    results.forEach( function( key, val ) {
-        var result = {};
-        result.year = new Date(parseInt( val.Year, 10 ), 0, 1);
-        result.population = parseInt( val.Population.replace( /,/g, '' ), 10 );
-        data.push( result );
-    } );
- 
-    chart = d3.select( 'body' ).append( 'svg' )
-        .attr( 'class', 'chart' )
-        .attr( 'width', 1100 )
-        .attr( 'height', h )
-        .append('g');
- 
-    d3.select('svg g')
-        .attr('transform', 'translate(50, 50)');
- 
-    x = d3.time.scale()
-        .domain( [data[0].year, d3.time.year.offset(data[data.length - 1].year, 1)] )
-        .range( [0, w * data.length] )
- 
-    y = d3.scale.linear()
-        .domain( [0, d3.max( data, function( d ) { return d.population; } )] )
-        .rangeRound( [0, h - margin] );
- 
-    // Bars
-    bars = chart.append('g')
-        .attr('class', 'bars');
- 
-    bars.selectAll( 'rect' )
-        .data( data )
-      .enter().append( 'rect' )
-        .attr( 'x', function( d, i ) { return x( d.year ) - .5; } )
-        .attr( 'y', function( d ) { return (h - margin) - y( d.population ) + .5 } )
-        .attr( 'width', w )
-        .attr( 'height', function( d ) { return y( d.population ) } )
-        .append('g');
- 
-    // Axis
-    xAxis = d3.svg.axis()
-        .scale(x)
-        .ticks(20)
-        .tickSize(6, 3, 1);
- 
-    yAxis = d3.svg.axis()
-        .scale(d3.scale.linear().domain( [0, d3.max( data, function( d ) { return d.population; } )] ).rangeRound( [h - margin, 0] ))
-        .tickSize(6, 3, 1)
-        .orient('right');
- 
-    chart.append('g')
-        .attr('class', 'x axis')
-        .attr('transform', 'translate(0, ' + (h - margin) + ')')
-        .call(xAxis);
- 
-    chart.append('g')
-        .attr('class', 'y axis')
-        .attr('transform', 'translate(' + x.range()[1] + ')')
-        .call(yAxis);
- 
-} );
-
-</script>
+</head>
+<body>
+	<div id="chart"></div>
 </body>
+
+	<script type="text/javascript">
+
+		var w = 500,
+		    h = 100;
+
+		var svg = d3.select("#chart")
+			.append("svg")
+			.attr("width", w)
+			.attr("height", h);
+	
+		d3.json("exam1.json", function(json) {
+	
+			var json = dataset;
+			dataset[3]["University A", "90"] 
+			dataset[3]["University B", "91"]
+			dataset[3]["University C", "46"]
+			dataset[3]["University D", "100"]
+			dataset[3]["University E", "92"]
+	
+			var max_n = 0;
+			for (var d in data) {
+				max_n = Math.max(data[d].n, max_n);
+			}
+		
+			var dx = w / max_n;
+			var dy = h / data.length;
+	
+			// bars
+			var bars = svg.selectAll(".bar")
+				.data(data)
+				.enter()
+				.append("rect")
+				.attr("class", function(d, i) {return "bar " + d.University;})
+				.attr("x", function(d, i) {return 0;})
+				.attr("y", function(d, i) {return dy*i;})
+				.attr("width", function(d, i) {return dx*d.n})
+				.attr("height", dy);
+	
+			// labels
+			var text = svg.selectAll("text")
+				.data(data)
+				.enter()
+				.append("text")
+				.attr("class", function(d, i) {return "label " + d.University;})
+				.attr("x", 5)
+				.attr("y", function(d, i) {return dy*i + 15;})
+				.text( function(d) {return d.label + " (" + d.n  + ")";})
+				.attr("font-size", "15px")
+				.style("font-weight", "bold");
+		});
+	</script>
+</html>
