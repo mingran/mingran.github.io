@@ -102,15 +102,15 @@ d3.json("exam1.json", function(data) {
       .data(dataset2)
       .enter().append("rect")
       .attr("class", "bar")
-      .attr("x", function(d) { return x(d.University); })
+      .attr("x", function(d) { return x(d.dataset2); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.number); })
-      .attr("height", function(d) { return height - y(d.number); });
+      .attr("y", function(d) { return y(d.dataset2); })
+      .attr("height", function(d) { return height - y(d.dataset2); });
 
 });
 
 function type(d) {
-  d.number = +d.number;
+  d.dataset2 = +d.dataset2;
   return d;
 }
 
