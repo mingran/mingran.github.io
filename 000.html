@@ -83,6 +83,9 @@ d3.json("exam1.json", function(data) {
   //dataset[3]["University B"] ;
   //alert(data[3]["University A"])
 
+	x.domain( dataset2.map(function(d) {return d;}) ) ;
+	y.domain([0,d3.max(dataset2,function(d){return d;})] );
+
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
