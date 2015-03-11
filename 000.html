@@ -78,7 +78,7 @@ d3.json("exam1.json", function(data) {
   //x.domain(data.map(function(d) { return d.University; }));
   //y.domain([0, d3.max(data, function(d) { return d. number; })]);
   dataset=data;
-  dataset2 = [dataset[3]["Univeristy A"], dataset[3]["Univeristy B"],dataset[3]["Univeristy C"] , dataset[3]["Univeristy D"],dataset[3]["Univeristy E"] ]
+  dataset2 = [dataset[3]["University A"], dataset[3]["University B"], dataset[3]["University C"], dataset[3]["University D"], dataset[3]["University E"] ]
   //dataset[3]["University A"] ;
   //dataset[3]["University B"] ;
   //alert(data[3]["University A"])
@@ -99,7 +99,7 @@ d3.json("exam1.json", function(data) {
       .text("number");
 
   svg.selectAll(".bar")
-      .data(data)
+      .data(dataset2)
       .enter().append("rect")
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.University); })
