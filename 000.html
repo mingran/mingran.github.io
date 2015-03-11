@@ -60,7 +60,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("Senior.json", function(data) {
+d3.json("Senior.json", type, function(error, data) {
   x.domain(data.map(function(d) { return d.University; }));
   y.domain([0, d3.max(data, function(d) { return d.number; })]);
 
