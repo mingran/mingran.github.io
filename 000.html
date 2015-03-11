@@ -72,11 +72,12 @@ var svg = d3.select("body").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+var dataset
 d3.json("exam1.json", function(data) {
+     console.log(data);
   //x.domain(data.map(function(d) { return d.University; }));
   //y.domain([0, d3.max(data, function(d) { return d. number; })]);
-  var dataset=data;
+  dataset=data;
   dataset[3]["University A"] ;
   dataset[3]["University B"] ;
   //alert(data[3]["University A"])
