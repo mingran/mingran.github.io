@@ -26,6 +26,11 @@
 }
 
 </style>
+
+
+
+
+
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
@@ -56,8 +61,8 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.tsv("data.tsv", type, function(error, data) {
-  x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+  x.domain(data.map(function(d) { return d.University; }));
+  y.domain([0, d3.max(data, function(d) { return d.number; })]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -72,21 +77,21 @@ d3.tsv("data.tsv", type, function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Frequency");
+      .text("number");
 
   svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
       .attr("class", "bar")
-      .attr("x", function(d) { return x(d.letter); })
+      .attr("x", function(d) { return x(d.University); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.frequency); })
-      .attr("height", function(d) { return height - y(d.frequency); });
+      .attr("y", function(d) { return y(d.number); })
+      .attr("height", function(d) { return height - y(d.number); });
 
 });
 
 function type(d) {
-  d.frequency = +d.frequency;
+  d.number = +d.number;
   return d;
 }
 
