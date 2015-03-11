@@ -86,10 +86,10 @@ d3.csv("exam1_Senior.json", function(error, data) {
       .data(data)
     .enter().append("rect")
       .style("fill", "steelblue")
-      .attr("x", function(d) { return x(d.Year); })
+      .attr("x", function(d) { return x(d.University); })
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.Senior); })
-      .attr("height", function(d) { return height - y(d.Senior); });
+      .attr("height", function(d) { return height - y(d.Number); });
 
 });
 
