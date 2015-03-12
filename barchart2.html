@@ -75,14 +75,14 @@ d3.json("exam1.json", function(error, jasodata) {
   data.push(temp5);
 
 
-
+alert(data[0][1])
   
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "type"; }));
 
   data.forEach(function(d) {
     var y0 = 0;
     d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
-    alert(d.ages.y1);
+    
     d.total = d.ages[d.ages.length - 1].y1;
   });
 
