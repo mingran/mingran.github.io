@@ -54,10 +54,12 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("exam1.json", function(error, jasodata) {
-	var data=[[]];
+d3.csv("data.csv", function(error, datajson) {
+
+  //
+var data=[[]];
   var temp=["type","Freshman","Sophomore","Junior","Senior"];
-	data.push(temp);
+  data.push(temp);
 
   temp1=["University A",jasodata[0]["University A"], jasodata[1]["University A"],jasodata[2]["University A"],jasodata[3]["University A"]];
   data.push(temp1);
@@ -75,10 +77,9 @@ d3.json("exam1.json", function(error, jasodata) {
   data.push(temp5);
 
 alert("hello")
+  //
 
-
-	
-  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "type"; }));
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "State"; }));
 
   data.forEach(function(d) {
     var y0 = 0;
