@@ -57,8 +57,8 @@ var svg = d3.select("body").append("svg")
 d3.json("exam1.json", function(error, jasodata) {
 
 
-  alert(jasodata[0]["University A"])
-  var data=[[]];
+
+  var data=[];
   var temp=["type","Freshman","Sophomore","Junior","Senior"];
   data.push(temp);
 
@@ -77,6 +77,7 @@ d3.json("exam1.json", function(error, jasodata) {
   temp5=["University E",jasodata[0]["University E"], jasodata[1]["University E"],jasodata[2]["University E"],jasodata[3]["University E"]];
   data.push(temp5);
 
+alert(data)
 
   
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "type"; }));
