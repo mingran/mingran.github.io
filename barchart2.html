@@ -61,7 +61,7 @@ var svg = d3.select("body").append("svg")
 d3.json("exam1.json", function(error, jasodata) {
 	var data;
 	data[0][0]="type"; data[0][1]="Freshman";data[0][2]="Sophomore";data[0][3]="Junior";data[0][4]="Senior";
-	data[1][0]="University A"; data[2][0]="University B"; data[3][0]="University C"; data[4][0]="University D"; data[5][0]="University E";
+	data[1][1]="University A"; data[2][1]="University B"; data[3][1]="University C"; data[4][1]="University D"; data[5][1]="University E";
 	for(i=1;i<=4;i++)
 	{
 		data[1][i]=jasodata[i]["University A"];
