@@ -55,6 +55,9 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.json("exam1.json", function(error, jasodata) {
+
+
+  alert(jasodata[0]["University A"])
   var data=[[]];
   var temp=["type","Freshman","Sophomore","Junior","Senior"];
   data.push(temp);
