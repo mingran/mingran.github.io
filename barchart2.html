@@ -55,17 +55,28 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.json("exam1.json", function(error, jasodata) {
-	var data;
-	data[0][0]="type"; data[0][1]="Freshman";data[0][2]="Sophomore";data[0][3]="Junior";data[0][4]="Senior";
-	data[1][0]="University A"; data[2][0]="University B"; data[3][0]="University C"; data[4][0]="University D"; data[5][0]="University E";
-	for(i=1;i<=4;i++)
-	{
-		data[1][i]=jasodata[i]["University A"];
-		data[2][i]=jasodata[i]["University B"];
-		data[3][i]=jasodata[i]["University C"];
-		data[4][i]=jasodata[i]["University D"];
-		data[5][i]=jasodata[i]["University E"];
-	}
+	var data=[];
+  var temp=["type","Freshman","Sophomore","Junior","Senior"];
+	data.push(temp);
+
+  temp=["University A",jasodata[0]["University A"], jasodata[1]["University A"],jasodata[2]["University A"],jasodata[3]["University A"]];
+  data.push(temp);
+
+  temp=["University B",jasodata[0]["University B"], jasodata[1]["University B"],jasodata[2]["University B"],jasodata[3]["University B"]];
+  data.push(temp);
+
+  temp=["University C",jasodata[0]["University C"], jasodata[1]["University C"],jasodata[2]["University C"],jasodata[3]["University C"]];
+  data.push(temp);
+
+  temp=["University D",jasodata[0]["University D"], jasodata[1]["University D"],jasodata[2]["University D"],jasodata[3]["University D"]];
+  data.push(temp);
+
+  temp=["University E",jasodata[0]["University E"], jasodata[1]["University E"],jasodata[2]["University E"],jasodata[3]["University E"]];
+  data.push(temp);
+
+
+
+	
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "type"; }));
 
   data.forEach(function(d) {
