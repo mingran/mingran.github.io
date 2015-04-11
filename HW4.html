@@ -18,8 +18,6 @@
 
 
 <script>
-
-
 var treemap = d3.layout.treemap()
 				.size([width, height])
 				.value(function(d){ return d.gdp; });
@@ -32,10 +30,9 @@ d3.json("test.json", function(error, root) {
 	console.log(nodes);
 	console.log(links);
 	
-	
-
-
 </script>
+
+
 		
     </body>  
 </html>  
