@@ -1,19 +1,31 @@
 <!DOCTYPE html>  
 <html>
   <head>  
+  <title>The Comparion of Drink Profits between Each State.</title>
         <script src="http://d3js.org/d3.v3.min.js"></script>
+       
   </head> 
   
 
 
 <body>
+
+
+The content contains a compasion of .....
+
+
+It talks about the ...
+The interaction part shows that ....
+
+
+
 <script>
 
 var color = d3.scale.category20();
 
 var canvas = d3.select("body").append("svg")
     .attr("width",1200)
-    .attr("height",500);
+    .attr("height",600);
 
 
 d3.json("test.json", function(data){
@@ -22,7 +34,7 @@ d3.json("test.json", function(data){
 	console.log(data);
 var treemap = d3.layout.treemap()   //layout the treemap
 	.value(function(d){return d.profit;})
-    .size([1200,500])
+    .size([1200,600])
     .nodes(data)
 
     console.log(treemap);
@@ -47,6 +59,7 @@ cells.append ("text")
      .attr("x", function (d) {return d.x + d.dx /2 })
      .attr("y", function (d) {return d.y + d.dy /2 })
      .attr("text-anchor", "middle")  //make the text on the middle of the rect
+     .attr("text-size", "2px") 
      .text(function (d){return d.children ? null : d.name; })  //set up text function
 
 

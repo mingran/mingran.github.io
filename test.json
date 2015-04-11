@@ -6,10 +6,10 @@
                 "name": "CA",
                 "children":
                 [
-                {"name":"Coffee", "profit":263},  
-                {"name":"Espresso", "profit":7128},  
-                {"name":"Herbal Tea", "profit":4003},  
-                {"name":"Tea", "profit":3620} 
+                {"name":"Coffee", "profit":15192},  
+                {"name":"Espresso", "profit":11963},  
+                {"name":"Herbal Tea", "profit":10257},  
+                {"name":"Tea", "profit":7107} 
                
             ]  
         },  
@@ -18,10 +18,10 @@
                 "name": "CO",  
                 "children":   
                 [  
-                {"name":"Coffee", "profit":300},  
-                {"name":"Espresso", "profit":5678},  
-                {"name":"Herbal Tea", "profit":3429},  
-                {"name":"Tea", "profit":357}
+                {"name":"Coffee", "profit":8226},  
+                {"name":"Espresso", "profit":3701},  
+                {"name":"Herbal Tea", "profit":3634},  
+                {"name":"Tea", "profit":2464}
             ]  
         }, 
 
@@ -29,180 +29,180 @@
             "name": "CT",  
             "children":   
             [  
-                {"name":"Coffee", "profit":900},  
-                {"name":"Espresso", "profit":4579},  
-                {"name":"Herbal Tea", "profit":2345},  
-                {"name":"Tea", "profit":469} 
+                {"name":"Coffee", "profit":2999},  
+                {"name":"Espresso", "profit":758},  
+                {"name":"Herbal Tea", "profit":2114},  
+                {"name":"Tea", "profit":1832} 
             ]  
         },
         {  
             "name": "FL",  
             "children":   
             [  
-                {"name":"Coffee", "profit":1000},  
-                {"name":"Espresso", "profit":4579},  
-                {"name":"Herbal Tea", "profit":346},  
-                {"name":"Tea", "profit":469} 
+                {"name":"Coffee", "profit":5031},  
+                {"name":"Espresso", "profit":2320},  
+                {"name":"Herbal Tea", "profit":2672},  
+                {"name":"Tea", "profit":2287} 
             ]  
         },
          {  
             "name": "IA",  
             "children":   
             [  
-                {"name":"Coffee", "profit":1567},  
-                {"name":"Espresso", "profit":4579},  
-                {"name":"Herbal Tea", "profit":346},  
-                {"name":"Tea", "profit":469} 
+                {"name":"Coffee", "profit":802},  
+                {"name":"Espresso", "profit":1284},  
+                {"name":"Herbal Tea", "profit":10043},  
+                {"name":"Tea", "profit":10111} 
             ]  
         },
         {  
             "name": "IL",  
             "children":   
             [  
-                {"name":"Coffee", "profit":4578},  
-                {"name":"Espresso", "profit":568},  
-                {"name":"Herbal Tea", "profit":967},  
-                {"name":"Tea", "profit":335} 
+                {"name":"Coffee", "profit":7825},  
+                {"name":"Espresso", "profit":11069},  
+                {"name":"Herbal Tea", "profit":8227},  
+                {"name":"Tea", "profit":3700} 
             ]  
         },
         {  
             "name": "LA",  
             "children":   
             [  
-                {"name":"Coffee", "profit":457},  
-                {"name":"Espresso", "profit":234},  
-                {"name":"Herbal Tea", "profit":290},  
-                {"name":"Tea", "profit":3908} 
+                {"name":"Coffee", "profit":2488},  
+                {"name":"Espresso", "profit":2466},  
+                {"name":"Herbal Tea", "profit":2456} 
+                
             ]  
         },
         {  
             "name": "MA",  
             "children":   
             [  
-                {"name":"Coffee", "profit":567},  
-                {"name":"Espresso", "profit":2356},  
-                {"name":"Herbal Tea", "profit":4546},  
-                {"name":"Tea", "profit":3467} 
+                {"name":"Coffee", "profit":12489},  
+                {"name":"Espresso", "profit":3044},  
+                {"name":"Herbal Tea", "profit":366},  
+                {"name":"Tea", "profit":1199} 
             ]  
         },
         {  
             "name": "MO",  
             "children":   
             [  
-                {"name":"Coffee", "profit":3556},  
-                {"name":"Espresso", "profit":4677},  
-                {"name":"Herbal Tea", "profit":3456},  
-                {"name":"Tea", "profit":467} 
+                {"name":"Coffee", "profit":2110},  
+                {"name":"Espresso", "profit":2236},  
+                {"name":"Herbal Tea", "profit":944},  
+                {"name":"Tea", "profit":645} 
             ]  
         },
         {  
             "name": "NH",  
             "children":   
             [  
-                {"name":"Coffee", "profit":356},  
-                {"name":"Espresso", "profit":557},  
-                {"name":"Herbal Tea", "profit":57889},  
-                {"name":"Tea", "profit":2256} 
+                {"name":"Coffee", "profit":1908},  
+                {"name":"Espresso", "profit":379},  
+                {"name":"Herbal Tea", "profit":65},  
+                {"name":"Tea", "profit":1256} 
             ]  
         },
         {  
             "name": "NM",  
             "children":   
             [  
-                {"name":"Coffee", "profit":2267},  
-                {"name":"Espresso", "profit":960},  
-                {"name":"Herbal Tea", "profit":2234},  
-                {"name":"Tea", "profit":3445} 
+                {"name":"Coffee", "profit":1666},  
+                {"name":"Espresso", "profit":750},  
+                {"name":"Herbal Tea", "profit":577}
+              
             ]  
         },
         {  
             "name": "NV",  
             "children":   
             [  
-                {"name":"Coffee", "profit":346},  
-                {"name":"Espresso", "profit":456},  
-                {"name":"Herbal Tea", "profit":377},  
-                {"name":"Tea", "profit":247} 
+                {"name":"Coffee", "profit":271},  
+                {"name":"Espresso", "profit":1631},  
+                {"name":"Herbal Tea", "profit":8699},  
+                {"name":"Tea", "profit":22058} 
             ]  
         },
         {  
             "name": "NY",  
             "children":   
             [  
-                {"name":"Coffee", "profit":346},  
-                {"name":"Espresso", "profit":689},  
-                {"name":"Herbal Tea", "profit":568},  
-                {"name":"Tea", "profit":468} 
+                {"name":"Coffee", "profit":8565},  
+                {"name":"Espresso", "profit":13943},  
+                {"name":"Herbal Tea", "profit":10872},  
+                {"name":"Tea", "profit":8984} 
             ]  
         },
         {  
             "name": "OH",  
             "children":   
             [  
-                {"name":"Coffee", "profit":356},  
-                {"name":"Espresso", "profit":960},  
-                {"name":"Herbal Tea", "profit":2234},  
-                {"name":"Tea", "profit":445} 
+                {"name":"Coffee", "profit":1778},  
+                {"name":"Espresso", "profit":3027},  
+                {"name":"Herbal Tea", "profit":1201},  
+                {"name":"Tea", "profit":5029} 
             ]  
         },
         {  
             "name": "OK",  
             "children":   
             [  
-                {"name":"Coffee", "profit":227},  
-                {"name":"Espresso", "profit":560},  
-                {"name":"Herbal Tea", "profit":224},  
-                {"name":"Tea", "profit":3449} 
+                {"name":"Coffee", "profit":1974},  
+                {"name":"Espresso", "profit":5519},  
+                {"name":"Herbal Tea", "profit":1065}
+                
             ]  
         },
         {  
             "name": "OR",  
             "children":   
             [  
-                {"name":"Coffee", "profit":267},  
-                {"name":"Espresso", "profit":760},  
-                {"name":"Herbal Tea", "profit":234},  
-                {"name":"Tea", "profit":345} 
+                {"name":"Coffee", "profit":1372},  
+                {"name":"Espresso", "profit":5918},  
+                {"name":"Herbal Tea", "profit":1975},  
+                {"name":"Tea", "profit":5523} 
             ]  
         },
         {  
             "name": "TX",  
             "children":   
             [  
-                {"name":"Coffee", "profit":867},  
-                {"name":"Espresso", "profit":120},  
-                {"name":"Herbal Tea", "profit":223},  
-                {"name":"Tea", "profit":345} 
+                {"name":"Coffee", "profit":7020},  
+                {"name":"Espresso", "profit":7108},  
+                {"name":"Herbal Tea", "profit":1638}
+               
             ]  
         },
         {  
             "name": "UT",  
             "children":   
             [  
-                {"name":"Coffee", "profit":3267},  
-                {"name":"Espresso", "profit":260},  
-                {"name":"Herbal Tea", "profit":374},  
-                {"name":"Tea", "profit":1445} 
+                {"name":"Coffee", "profit":2786},  
+                {"name":"Espresso", "profit":3730},  
+                {"name":"Herbal Tea", "profit":2684},  
+                {"name":"Tea", "profit":741} 
             ]  
         },
         {  
             "name": "WA",  
             "children":   
             [  
-                {"name":"Coffee", "profit":227},  
-                {"name":"Espresso", "profit":960},  
-                {"name":"Herbal Tea", "profit":224},  
-                {"name":"Tea", "profit":345} 
+                {"name":"Coffee", "profit":2224},  
+                {"name":"Espresso", "profit":2674},  
+                {"name":"Herbal Tea", "profit":4140},  
+                {"name":"Tea", "profit":2457} 
             ]  
         },
         {  
             "name": "WI",  
             "children":   
             [  
-                {"name":"Coffee", "profit":2267},  
-                {"name":"Espresso", "profit":960},  
-                {"name":"Herbal Tea", "profit":2234},  
-                {"name":"Tea", "profit":3445} 
+                {"name":"Coffee", "profit":664},  
+                {"name":"Espresso", "profit":2184},  
+                {"name":"Herbal Tea", "profit":2788},  
+                {"name":"Tea", "profit":1003} 
             ]  
         }
 
