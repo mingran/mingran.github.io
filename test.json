@@ -1,12 +1,12 @@
 {  
-    "name": "中国",  
+    "name": "America",  
     "children":  
     [  
         {  
-            "name": "浙江",  
+            "name": "CO",  
             "children":   
             [  
-                {"name":"杭州", "gdp":8343},  
+                {"name":"", "gdp":8343},  
                 {"name":"宁波", "gdp":7128},  
                 {"name":"温州", "gdp":4003},  
                 {"name":"绍兴", "gdp":3620},  
