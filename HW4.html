@@ -35,7 +35,7 @@ cells.append("rect")   //append rect
     .attr("y", function (d) {return d.y; })
     .attr("width", function (d) {return d.dx; })
     .attr("height", function (d) {return d.dy; })
-    .attr("fill", function (d) {return d.children ? null : color (d.parent.name); })   //if it has children, then return the color of parent
+    .attr("fill", function (d) {return d.children; })   //if it has children, then return the color of parent
 
 
 
