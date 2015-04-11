@@ -1,30 +1,29 @@
 <!DOCTYPE html>  
 
-
+<html>
   <head>  
-        <title>Treemap</title>  
-         <meta charset="utf-8"> 
+        <script src="d3.js"></script>
   </head> 
   
 
 
 <body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-
-
-
-
 <script>
 
+var canvas = d3.select("body").append("svg")
+    .attr("width",500)
+    .attr("height",500);
 
 
+d3.json("test.json", function(data){
+
+var treemap = d3.layout.treemap()
+    .size([500,500])
+    .nodes(data)
+
+    console.log(treemap);
 
 
-d3.json("test.json", function(error, json) {
-
-     var data= json;
-     alert(data.name);
-     alert(data.children[1].name);
 
 })
 
