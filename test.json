@@ -27,7 +27,7 @@
             "name": "CT",  
             "children":   
             [  
-               {"name":"Coffee", "profit":900},  
+                {"name":"Coffee", "profit":900},  
                 {"name":"Espresso", "profit":4579},  
                 {"name":"Herbal Tea", "profit":2345},  
                 {"name":"Tea", "profit":469},  
