@@ -48,7 +48,7 @@ var color = d3.scale.category20c();
 var treemap = d3.layout.treemap()  //layout the map and transfer the data
     .size([width, height])
     .sticky(true)  //when resort, at any level of the hierarchy of data, the cells stay in the same order.
-    .value(function(d) { return d.profit; });
+    .value(function(d) { return d.gdp; });
 
 
 
@@ -71,7 +71,7 @@ d3.json("test.json", function(error, root) {
   d3.selectAll("input").on("change", function change() {
     var value = this.value === "count"
         ? function() { return 1; }
-        : function(d) { return d.size; };
+        : function(d) { return d.gdp; };
 
     node
         .data(treemap.value(value).nodes)
@@ -90,3 +90,4 @@ function position() {
 
 </script>
 </body>
+</html>
