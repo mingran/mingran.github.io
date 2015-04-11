@@ -17,20 +17,15 @@
 <script>
 
 
-var treemap = d3.layout.treemap()
-				.size([width, height])
-				.value(function(d){ return d.gdp; });
 
 
-d3.json("test.json", function(json) {
 
-	var nodes = treemap.nodes(root);
-	var links = treemap.links(nodes);
-	
-	console.log(nodes);
-	console.log(links);
+d3.json("test.json", function(error, json) {
 
-}
+     var data= json;
+     alert(data.name);
+
+})
 
 	
 
