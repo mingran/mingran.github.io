@@ -9,7 +9,7 @@
                 {"name":"Coffee", "gdp":263},  
                 {"name":"Espresso", "gdp":7128},  
                 {"name":"Herbal Tea", "gdp":4003},  
-                {"name":"Tea", "gdp":3620},  
+                {"name":"Tea", "gdp":3620} 
                
             ]  
         },  
@@ -20,7 +20,7 @@
                 {"name":"Coffee", "gdp":300},  
                 {"name":"Espresso", "gdp":5678},  
                 {"name":"Herbal Tea", "gdp":3429},  
-                {"name":"Tea", "gdp":357}, 
+                {"name":"Tea", "gdp":357}
             ]  
         },  
         {  
@@ -30,7 +30,7 @@
                 {"name":"Coffee", "gdp":900},  
                 {"name":"Espresso", "gdp":4579},  
                 {"name":"Herbal Tea", "gdp":2345},  
-                {"name":"Tea", "gdp":469},  
+                {"name":"Tea", "gdp":469} 
             ]  
         } 
 
