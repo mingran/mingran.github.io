@@ -22,7 +22,7 @@ var treemap = d3.layout.treemap()
 				.value(function(d){ return d.gdp; });
 
 
-d3.json("test.json", function(error, json) {
+d3.json("test.json", function(json) {
 
 	var nodes = treemap.nodes(root);
 	var links = treemap.links(nodes);
@@ -30,7 +30,7 @@ d3.json("test.json", function(error, json) {
 	console.log(nodes);
 	console.log(links);
 
-})
+}
 
 	
 
