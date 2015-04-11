@@ -12,14 +12,14 @@
 var color = d3.scale.category10();
 
 var canvas = d3.select("body").append("svg")
-    .attr("width",500)
+    .attr("width",800)
     .attr("height",500);
 
 
 d3.json("test.json", function(data){
 
 var treemap = d3.layout.treemap()   //layout the treemap
-    .size([500,500])
+    .size([800,500])
     .nodes(data)
 
     console.log(treemap);
