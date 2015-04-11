@@ -20,9 +20,9 @@
 var treemap = d3.layout.treemap()
 				.size([width, height])
 				.value(function(d){ return d.gdp; });
-				
 
-d3.json("test.json", function(error, root) {
+
+d3.json("test.json", function(error, json) {
 
 	var nodes = treemap.nodes(root);
 	var links = treemap.links(nodes);
