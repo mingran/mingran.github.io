@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
-
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: auto;
@@ -23,8 +22,12 @@ form {
   position: absolute;
   text-indent: 2px;
 }
-
 </style>
+
+
+
+
+
 <form>
   <label><input type="radio" name="mode" value="size" checked> Size</label>
   <label><input type="radio" name="mode" value="count"> Count</label>
@@ -32,16 +35,22 @@ form {
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
+
+
 var margin = {top: 40, right: 10, bottom: 10, left: 10},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var color = d3.scale.category20c();
 
-var treemap = d3.layout.treemap()
+
+
+var treemap = d3.layout.treemap()  //layout the map and transfer the data
     .size([width, height])
-    .sticky(true)
-    .value(function(d) { return d.size; });
+    .sticky(true)  //when resort, at any level of the hierarchy of data, the cells stay in the same order.
+    .value(function(d) { return d.profit; });
+
+
 
 var div = d3.select("body").append("div")
     .style("position", "relative")
@@ -50,7 +59,7 @@ var div = d3.select("body").append("div")
     .style("left", margin.left + "px")
     .style("top", margin.top + "px");
 
-d3.json("flare.json", function(error, root) {
+d3.json("HW4.json", function(error, root) {
   var node = div.datum(root).selectAll(".node")
       .data(treemap.nodes)
     .enter().append("div")
