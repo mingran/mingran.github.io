@@ -32,7 +32,7 @@
                 {"name":"Herbal Tea", "gdp":2345},  
                 {"name":"Tea", "gdp":469},  
             ]  
-        },  
+        } 
 
     ]  
 }  
