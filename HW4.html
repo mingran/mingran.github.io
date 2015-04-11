@@ -37,7 +37,7 @@ var svg = d3.select("body").append("svg")
 
 var treemap = d3.layout.treemap()
 				.size([width, height])
-				.value(function(d){ return d.gdp; });
+				.value(function(d){ return d.profit; });
 
 d3.json("test.json", function(error, root) {
 
@@ -69,7 +69,7 @@ d3.json("test.json", function(error, root) {
 					.attr("dx","0.5em")
 					.attr("dy","1.5em")
 					.text(function(d){ 
-						return d.name + " " + d.gdp; 
+						return d.name + " " + d.profit; 
 					});
 });
 
