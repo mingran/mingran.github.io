@@ -37,15 +37,15 @@ var svg = d3.select("body").append("svg")
 
 var treemap = d3.layout.treemap()
 				.size([width, height])
-				.value(function(d){ return d.profit; });
+				.value(function(d){ return d.gdp; });
 
-//d3.json("test.json", function(error, root) {
+d3.json("test.json", function(error, root) {
 
-	//var nodes = treemap.nodes(root);
-	//var links = treemap.links(nodes);
+	var nodes = treemap.nodes(root);
+	var links = treemap.links(nodes);
 	
-	//console.log(nodes);
-	//console.log(links);
+	console.log(nodes);
+	console.log(links);
 	
 	var color = d3.scale.category10();
 
@@ -69,7 +69,7 @@ var treemap = d3.layout.treemap()
 					.attr("dx","0.5em")
 					.attr("dy","1.5em")
 					.text(function(d){ 
-						return d.name + " " + d.profit; 
+						return d.name + " " + d.gdp; 
 					});
 });
 
