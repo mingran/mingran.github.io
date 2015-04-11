@@ -36,6 +36,15 @@ cells.append("rect")   //append rect
     .attr("width", function (d) {return d.dx; })
     .attr("height", function (d) {return d.dy; })
     .attr("fill", function (d) {return d.children ? null : color(d.parent.name); })   //if it has children, then return null, else return the color of parent
+    .attr("stroke", "#fff")
+
+
+//append texts to rect
+cells.append ("text")
+     .attr("x", function (d) {return d.x + d.dx /2 })
+     .attr("y", function (d) {return d.y + d.dy /2 })
+     .attr("text-anchor", "middle")  //make the text on the middle of the rect
+     .text(function (d){return d.children ? null : d.name; })  //set up text function
 
 
 
