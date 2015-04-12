@@ -30,7 +30,7 @@ body {
 
 
 
-<p>Click each section of bars to see numbers. Users can see the total numbers of each grade of IE students between five universities.</p>
+<p>Click each section of bars to see numbers. <br>Users can see the total numbers of each grade of IE students between five universities.</p>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 
@@ -69,12 +69,12 @@ var svg = d3.select("body").append("svg")
 	
 d3.json("https://hivelab.org/static/exam1.json", function(json) {
    				universities = json;
-				 UnivName=Object.keys(univs[0]).filter(
+				 UnivName=Object.keys(universities[0]).filter(
 					function(d) {
 					return (d !== "Year");
 					})
 
-				UnivObj = Object.keys(univs[0]).filter(
+				UnivObj = Object.keys(universities[0]).filter(
 				function(d) {
 				return (d !== "Year");
 					}
