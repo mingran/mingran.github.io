@@ -1,8 +1,41 @@
 <!DOCTYPE html>  
 <html>
   <head>  
-  <title>The Comparion of Drink Profits between Each State.</title>
+  <title>HW4</title>
         <script src="http://d3js.org/d3.v3.min.js"></script>
+        <style type="text/css">
+
+			rect:hover {
+				fill: white;
+			}
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+		</style>
        
   </head> 
   
@@ -10,12 +43,11 @@
 
 <body>
 
+<h1>The Comparison of total profits in four kinds of drinks between twenty states in the US. </h1>
+<p>The treemap displays a comparison of total profits in four kinds of drinks between twenty states in the US. The drinks include Coffee, Tea, Herbal Tea and Espresso, which have the attributes of profits, sales, detailed types and dates. The treemap focus on performance on the attribute of profits based on each categery and each state. 
 
-The content contains a compasion of .....
-
-
-It talks about the ...
-The interaction part shows
+The interactions of hover and tooltips have been created. I think the gold of each piece of visualization is help users to unserstand the information accurate and faster. I believe that the interactive method I user, which can help with the goal achievement. 
+</p>
 
 
 
@@ -25,7 +57,7 @@ var color = d3.scale.category20();
 
 var canvas = d3.select("body").append("svg")
     .attr("width",1200)
-    .attr("height",600);
+    .attr("height",550);
 
 
 d3.json("test.json", function(data){
@@ -34,7 +66,7 @@ d3.json("test.json", function(data){
 	console.log(data);
 var treemap = d3.layout.treemap()   //layout the treemap
 	.value(function(d){return d.profit;})
-    .size([1200,600])
+    .size([1200,550])
     .nodes(data)
 
     console.log(treemap);
@@ -61,6 +93,21 @@ cells.append ("text")
      .attr("text-anchor", "middle")  //make the text on the middle of the rect
      .attr("text-size", "2px") 
      .text(function (d){return d.children ? null : d.name; })  //set up text function
+     //.text(function(d) {return "This value is " + d.profit; });
+     .append("title")
+     .text(function (d) {return "The value of profit is " + d.profit; });
+
+  var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<strong>Profit:</strong> <span style='color:red'>" + d.profit + "</span>";
+  })
+
+function type(d) {
+  d.profit = +d.profit;
+  return d;
+}
 
 
 
