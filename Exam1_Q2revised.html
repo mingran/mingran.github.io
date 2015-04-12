@@ -67,8 +67,8 @@ var svg = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	
-d3.json("https://hivelab.org/static/exam1.json", function(data0) {
-   				 univs = data0;
+d3.json("https://hivelab.org/static/exam1.json", function(json) {
+   				 univs = json;
 				 UnivName=Object.keys(univs[0]).filter(
 					function(d) {
 					return (d !== "Year");
@@ -102,7 +102,9 @@ d3.json("https://hivelab.org/static/exam1.json", function(data0) {
     var y0 = 0;
     d.ages = color.domain().map(function(Years) { 
 
-	return {Years: Years, name: d.name, Freshman: d.Freshman, Sophomore: d.Sophomore, Junior: d.Junior,Senior: d.Senior, y0: y0, y1: y0 += +d[Years]}; });
+	return {
+    Years: Years, name: d.name, Freshman: d.Freshman, Sophomore: d.Sophomore, Junior: d.Junior,Senior: d.Senior, y0: y0, y1: y0 += +d[Years]
+  }; });
     d.total = d.ages[d.ages.length - 1].y1;
   });
 
@@ -134,7 +136,7 @@ state.selectAll("rect")
       .data(function(d) { return d.ages; })
     .enter().append("rect")
 	.attr("id", function(d){   
-                return d.name;        // slug = label downcased, this works
+                return d.name;       
             })
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.y1); })
@@ -143,19 +145,15 @@ state.selectAll("rect")
 
 
     .on("click", function(d) {
-        if(d.Years==="Freshman"){//Do something mundane and annoying on click
-        //alert("Hey, we are Freshman!");
-		
-//	console.log(down);	
+        if(d.Years==="Freshman"){
 svg.selectAll("rect")
-           //.data(dataset)
+          
 		   .transition()
           .attr("y", function(d) { return y(d.y1); })
             .attr("height", function(d) { return y(d.y0) - y(d.y1); })
       .style("fill", function(d) { return color(d.Years); })
 		}
 		else if(d.Years==="Sophomore"){
-		//alert("Hey, we are Sophomore!");	
 		svg.selectAll("rect")
 		   .transition()
           .attr("y", function(d) { return y(d.y1-d.Freshman); })
@@ -164,7 +162,6 @@ svg.selectAll("rect")
 		
 			}
 		else if(d.Years==="Junior"){
-		//alert("Hey, we are Junior!");	
 		svg.selectAll("rect")
 		   .transition()
           .attr("y", function(d) { return y(d.y1-d.Freshman-d.Sophomore); })
@@ -173,7 +170,6 @@ svg.selectAll("rect")
 		
 			}
 		else if(d.Years==="Senior"){
-		//alert("Hey, we are Senior!");	
 		svg.selectAll("rect")
 		   .transition()
           .attr("y", function(d) { return y(d.y1-d.Freshman-d.Sophomore-d.Junior); })
