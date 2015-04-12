@@ -68,7 +68,7 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	
 d3.json("https://hivelab.org/static/exam1.json", function(json) {
-   				 univs = json;
+   				universities = json;
 				 UnivName=Object.keys(univs[0]).filter(
 					function(d) {
 					return (d !== "Year");
@@ -86,12 +86,12 @@ d3.json("https://hivelab.org/static/exam1.json", function(json) {
 					});
 					
 				var YearName=[];
-				for(i=0;i<univs.length;i++){
-				YearName[i]=univs[i].Year;
+				for(i=0;i<universities.length;i++){
+				YearName[i]=universities[i].Year;
 				}
 				for(j=0;j< YearName.length;j++){
 				  for(i=0;i< UnivObj.length;i++){
-					UnivObj[i][ YearName[j]]=univs[j][UnivName[i]];
+					UnivObj[i][ YearName[j]]=universities[j][UnivName[i]];
 				}}
 			data= UnivObj;
 
