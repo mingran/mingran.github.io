@@ -1,0 +1,235 @@
+{  
+    "name": "America", 
+    "value": 4, 
+    "children":  
+    [  
+        {  
+                "name": "CA",
+                "value": 4,
+                "children":
+                [
+                {"name":"Coffee", "value":15192},  
+                {"name":"Espresso", "value":11963},  
+                {"name":"Herbal Tea", "value":10257},  
+                {"name":"Tea", "value":7107} 
+               
+            ]  
+        },  
+
+              {  
+                "name": "CO", 
+                "value": 4, 
+                "children":   
+                [  
+                {"name":"Coffee", "value":8226},  
+                {"name":"Espresso", "value":3701},  
+                {"name":"Herbal Tea", "value":3634},  
+                {"name":"Tea", "value":2464}
+            ]  
+        }, 
+
+        {  
+            "name": "CT",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":2999},  
+                {"name":"Espresso", "value":758},  
+                {"name":"Herbal Tea", "value":2114},  
+                {"name":"Tea", "value":1832} 
+            ]  
+        },
+        {  
+            "name": "FL",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":5031},  
+                {"name":"Espresso", "value":2320},  
+                {"name":"Herbal Tea", "value":2672},  
+                {"name":"Tea", "value":2287} 
+            ]  
+        },
+         {  
+            "name": "IA",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":802},  
+                {"name":"Espresso", "value":1284},  
+                {"name":"Herbal Tea", "value":10043},  
+                {"name":"Tea", "value":10111} 
+            ]  
+        },
+        {  
+            "name": "IL",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":7825},  
+                {"name":"Espresso", "value":11069},  
+                {"name":"Herbal Tea", "value":8227},  
+                {"name":"Tea", "value":3700} 
+            ]  
+        },
+        {  
+            "name": "LA",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":2488},  
+                {"name":"Espresso", "value":2466},  
+                {"name":"Herbal Tea", "value":2456} 
+                
+            ]  
+        },
+        {  
+            "name": "MA",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":12489},  
+                {"name":"Espresso", "value":3044},  
+                {"name":"Herbal Tea", "value":366},  
+                {"name":"Tea", "value":1199} 
+            ]  
+        },
+        {  
+            "name": "MO",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":2110},  
+                {"name":"Espresso", "value":2236},  
+                {"name":"Herbal Tea", "value":944},  
+                {"name":"Tea", "value":645} 
+            ]  
+        },
+        {  
+            "name": "NH",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":1908},  
+                {"name":"Espresso", "value":379},  
+                {"name":"Herbal Tea", "value":65},  
+                {"name":"Tea", "value":1256} 
+            ]  
+        },
+        {  
+            "name": "NM",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":1666},  
+                {"name":"Espresso", "value":750},  
+                {"name":"Herbal Tea", "value":577}
+              
+            ]  
+        },
+        {  
+            "name": "NV",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":271},  
+                {"name":"Espresso", "value":1631},  
+                {"name":"Herbal Tea", "value":8699},  
+                {"name":"Tea", "value":22058} 
+            ]  
+        },
+        {  
+            "name": "NY",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":8565},  
+                {"name":"Espresso", "value":13943},  
+                {"name":"Herbal Tea", "value":10872},  
+                {"name":"Tea", "value":8984} 
+            ]  
+        },
+        {  
+            "name": "OH",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":1778},  
+                {"name":"Espresso", "value":3027},  
+                {"name":"Herbal Tea", "value":1201},  
+                {"name":"Tea", "value":5029} 
+            ]  
+        },
+        {  
+            "name": "OK",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":1974},  
+                {"name":"Espresso", "value":5519},  
+                {"name":"Herbal Tea", "value":1065}
+                
+            ]  
+        },
+        {  
+            "name": "OR",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":1372},  
+                {"name":"Espresso", "value":5918},  
+                {"name":"Herbal Tea", "value":1975},  
+                {"name":"Tea", "value":5523} 
+            ]  
+        },
+        {  
+            "name": "TX",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":7020},  
+                {"name":"Espresso", "value":7108},  
+                {"name":"Herbal Tea", "value":1638}
+               
+            ]  
+        },
+        {  
+            "name": "UT",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":2786},  
+                {"name":"Espresso", "value":3730},  
+                {"name":"Herbal Tea", "value":2684},  
+                {"name":"Tea", "value":741} 
+            ]  
+        },
+        {  
+            "name": "WA",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":2224},  
+                {"name":"Espresso", "value":2674},  
+                {"name":"Herbal Tea", "value":4140},  
+                {"name":"Tea", "value":2457} 
+            ]  
+        },
+        {  
+            "name": "WI",  
+            "value": 4,
+            "children":   
+            [  
+                {"name":"Coffee", "value":664},  
+                {"name":"Espresso", "value":2184},  
+                {"name":"Herbal Tea", "value":2788},  
+                {"name":"Tea", "value":1003} 
+            ]  
+        }
+
+
+
+
+
+    ]  
+}  
