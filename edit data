@@ -1,0 +1,19 @@
+d3.csv("HW4.csv", function(coffee) {
+  var root2 = { "key": "Map", "values" :d3.nest()
+      .key(function(d){return d.category;})
+      .key(function(d){return d.type;})
+      .rollup(function(leaves){
+          return {"profit":d3.sum(leaves,function(d){
+          return parseFloat(d.profit)})
+        };
+      })
+      .entries(coffee)
+    };
+
+for(i=0; i<root2.values.length; i++){
+  // alert(root2.values[i].key);
+  for(j=0; j<root2.values[i].values.length; j++){
+    root2.values[i].values[j].profit = root2.values[i].values[j].values.profit;
+    delete root2.values[i].values[j].values;
+  }
+}

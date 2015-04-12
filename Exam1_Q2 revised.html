@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.x.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+</style>
+<body>
+<p>Click bars to slide</p>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var margin = {top: 30, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()//---------------
+    .rangeRoundBands([0, width-40], .1);
+
+var y = d3.scale.linear()
+    .rangeRound([height, 0]);
+
+var color = d3.scale.ordinal()
+    .range(["#99FFFF", "#0099CC", "#33CCCC", "#FFDFCE"]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(d3.format(".2s"));
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", 2*(height + margin.top + margin.bottom))
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+d3.json("https://hivelab.org/static/exam1.json", function(data0) {
+   				 univs = data0;//----------------------------------------------------------deal with dataset
+				 UnivName=Object.keys(univs[0]).filter(
+					function(d) {
+					return (d !== "Year");
+					})
+
+				UnivObj = Object.keys(univs[0]).filter(
+				function(d) {
+				return (d !== "Year");
+					}
+					).map(
+					function(d) {
+						return {
+						"name": d
+						}
+					});
+					
+				var YearName=[];
+				for(i=0;i<univs.length;i++){
+				YearName[i]=univs[i].Year;
+				}
+				for(j=0;j< YearName.length;j++){
+				  for(i=0;i< UnivObj.length;i++){
+					UnivObj[i][ YearName[j]]=univs[j][UnivName[i]];
+				}}
+			data= UnivObj;
+				// dataset = data;
+//d3.csv("Stack.csv", function(error, data) {
+	console.log(data);
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "name"; }));
+
+  data.forEach(function(d) {
+    var y0 = 0;
+    d.ages = color.domain().map(function(Years) { 
+	//console.log(d[Years]);
+	return {Years: Years, name: d.name, Freshman: d.Freshman, Sophomore: d.Sophomore, Junior: d.Junior,Senior: d.Senior, y0: y0, y1: y0 += +d[Years]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
+	
+	//console.log(d.ages);
+	//console.log(d.ages[d.ages.length]);
+  });
+
+  //data.sort(function(a, b) { return b.total - a.total;}
+  //);
+
+  x.domain(data.map(function(d) { return d.name; 
+  }));
+   
+  y.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  /*svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);*/
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Number of Students");
+
+  var state = svg.selectAll(".name")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x(d.name) + ",0)"; });
+var down=new Array();
+ 
+state.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+	.attr("id", function(d){   
+                return d.name;        // slug = label downcased, this works
+            })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.y1); })
+      .attr("height", function(d) {  return y(d.y0) - y(d.y1);})
+      .style("fill", function(d) { return color(d.Years); })
+
+
+    .on("click", function(d) {
+        if(d.Years==="Freshman"){//Do something mundane and annoying on click
+        //alert("Hey, we are Freshman!");
+		
+//	console.log(down);	
+svg.selectAll("rect")
+           //.data(dataset)
+		   .transition()
+          .attr("y", function(d) { return y(d.y1); })
+            .attr("height", function(d) { return y(d.y0) - y(d.y1); })
+      .style("fill", function(d) { return color(d.Years); })
+		}
+		else if(d.Years==="Sophomore"){
+		//alert("Hey, we are Sophomore!");	
+		svg.selectAll("rect")
+		   .transition()
+          .attr("y", function(d) { return y(d.y1-d.Freshman); })
+            .attr("height", function(d) { return y(d.y0) - y(d.y1); })
+      .style("fill", function(d) { return color(d.Years); })
+		
+			}
+		else if(d.Years==="Junior"){
+		//alert("Hey, we are Junior!");	
+		svg.selectAll("rect")
+		   .transition()
+          .attr("y", function(d) { return y(d.y1-d.Freshman-d.Sophomore); })
+            .attr("height", function(d) { return y(d.y0) - y(d.y1); })
+      .style("fill", function(d) { return color(d.Years); })
+		
+			}
+		else if(d.Years==="Senior"){
+		//alert("Hey, we are Senior!");	
+		svg.selectAll("rect")
+		   .transition()
+          .attr("y", function(d) { return y(d.y1-d.Freshman-d.Sophomore-d.Junior); })
+            .attr("height", function(d) { return y(d.y0) - y(d.y1); })
+      .style("fill", function(d) { return color(d.Years); })
+		
+			}	
+			
+    });
+
+
+
+  var legend = svg.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(20," + i * 20 + ")"; });
+
+  legend.append("circle")
+      .attr("cx", width - 10)
+      .attr("cy",  10)
+      .attr("r", 9)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+	  
+	   svg.append("text")
+            .attr("x", (width / 2))
+            .attr("y",-10)
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .text("Number of IE Students in the Five Universities");
+			
+			
+});
+
+</script>
+<p>Click bars to slide</p>
+</html>
