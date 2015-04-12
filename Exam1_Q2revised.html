@@ -26,13 +26,13 @@ body {
 
 </style>
 <body>
-<p>Click bars to slide</p>
+<p>Click each section of bars to see results.</p>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
 var margin = {top: 30, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 900 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
 
 var x = d3.scale.ordinal()//---------------
     .rangeRoundBands([0, width-40], .1);
@@ -59,7 +59,7 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	
 d3.json("https://hivelab.org/static/exam1.json", function(data0) {
-   				 univs = data0;//----------------------------------------------------------deal with dataset
+   				 univs = data0;
 				 UnivName=Object.keys(univs[0]).filter(
 					function(d) {
 					return (d !== "Year");
@@ -85,34 +85,24 @@ d3.json("https://hivelab.org/static/exam1.json", function(data0) {
 					UnivObj[i][ YearName[j]]=univs[j][UnivName[i]];
 				}}
 			data= UnivObj;
-				// dataset = data;
-//d3.csv("Stack.csv", function(error, data) {
+
 	console.log(data);
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "name"; }));
 
   data.forEach(function(d) {
     var y0 = 0;
     d.ages = color.domain().map(function(Years) { 
-	//console.log(d[Years]);
+
 	return {Years: Years, name: d.name, Freshman: d.Freshman, Sophomore: d.Sophomore, Junior: d.Junior,Senior: d.Senior, y0: y0, y1: y0 += +d[Years]}; });
     d.total = d.ages[d.ages.length - 1].y1;
-	
-	//console.log(d.ages);
-	//console.log(d.ages[d.ages.length]);
   });
-
-  //data.sort(function(a, b) { return b.total - a.total;}
-  //);
 
   x.domain(data.map(function(d) { return d.name; 
   }));
    
   y.domain([0, d3.max(data, function(d) { return d.total; })]);
 
-  /*svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);*/
+
 
   svg.append("g")
       .attr("class", "y axis")
