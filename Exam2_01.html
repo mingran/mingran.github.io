@@ -6,6 +6,7 @@
 <title>Exam2</title>
 <script type='text/javascript' src='http://d3js.org/d3.v3.min.js'></script>
 <style>
+
 table, th, td {
     border: 1px solid black;
     text-align: right;
@@ -30,6 +31,7 @@ table, th, td {
 
 <script>
 window.onload=function(){
+
 var jsonData = [
 {"ItemNo":"item01","A":85,"B":50,"C":16,"D":23,"E":61,"F":73,"G":94},
 {"ItemNo":"item02","A":21,"B":59,"C":41,"D":83,"E":41,"F":50,"G":68},
@@ -47,6 +49,8 @@ var jsonData = [
 {"ItemNo":"item14","A":1,"B":82,"C":94,"D":69,"E":57,"F":51,"G":79},
 {"ItemNo":"item15","A":74,"B":64,"C":56,"D":34,"E":98,"F":56,"G":24}
 ];
+var nofirst=0;
+var row =0;
 
 refreshTable(null);
 
@@ -81,11 +85,26 @@ function refreshTable(table){
 		.on("mouseout", function(a,c,b){
 			b = b+1
 			d3.select("tbody").selectAll("tr:nth-child(" + b +")")
-			.style("background-color", "");})
-    		.on("click", function(a,c,b){
+			.style("background-color", function(){
+				
+				if (nofirst == 1 && b == row) 
+					return "green";
+                else
+                	return "";
+			});})
+
+    	.on("click", function(a,c,b){
 			b = b+1
+			if (nofirst == 1)
+			{
+			   d3.select("tbody").selectAll("tr:nth-child(" + row +")")
+			.style("background-color", "")	
+			}
+			nofirst=1
+			row=b
 			d3.select("tbody").selectAll("tr:nth-child(" + b +")")
 			.style("background-color", "green");});
+
 }
 }
 
