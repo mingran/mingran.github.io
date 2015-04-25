@@ -83,18 +83,7 @@ var td = tr.selectAll("td").data(function(d){return d3.values(d);});
                 	return "";
 			});})
 
-    	.on("click", function(a,c,b){
-			b = b+1
-			if (nofirst == 1)
-			{
-			   d3.select("tbody").selectAll("tr:nth-child(" + row +")")
-			.style("background-color", "")	
-			}
-			nofirst=1
-			row=b
-			d3.select("tbody").selectAll("tr:nth-child(" + b +")")
-			.style("background-color", "green");});
-
+    	
 	
 	if(sortOn !== null) {			
 			if(sortOn != previousSort){
