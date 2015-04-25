@@ -3,13 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>Exam_2</title>
+<title>Exam2</title>
 <script type='text/javascript' src='http://d3js.org/d3.v3.min.js'></script>
-  
+<style>
+
+table, th, td {
+    border: 1px solid black;
+    text-align: right;
+}
+</style>
   
   
 <body>
-<table id="table">
+<!--<table id="table">
+    <head></head>
+    <body></body>
+</table>  -->
+
+<table id="table" width="300" height="700">
     <thead></thead>
     <tbody></tbody>
 </table>
@@ -20,10 +31,8 @@
 
 <script>
 window.onload=function(){
-//var previousSort = null;
-//var format = d3.time.format("%a %b %d %Y");
-
-
+var previousSort = null;
+var format = d3.time.format("%a %b %d %Y");
 var jsonData = [
 {"ItemNo":"item01","A":85,"B":50,"C":16,"D":23,"E":61,"F":73,"G":94},
 {"ItemNo":"item02","A":21,"B":59,"C":41,"D":83,"E":41,"F":50,"G":68},
@@ -43,37 +52,37 @@ var jsonData = [
 ];
 
 refreshTable(null);
-
 function refreshTable(sortOn){
-
-	// create the table header
-	var thead = d3.select("thead").selectAll("th")
+var thead = d3.select("thead").selectAll("th")
 		.data(d3.keys(jsonData[0]))
 		.enter().append("th").text(function(d){return d;})
-		.on("click", function(d){ return refreshTable(d);});
+		.on("click", function(d){ return refreshTable(d);})
+		.style("background-color", "#b8bebe");;
 		
-	// fill the table	
-	// create rows
-	var tr = d3.select("tbody").selectAll("tr").data(jsonData);	
+var tr = d3.select("tbody").selectAll("tr").data(jsonData);	
 	tr.enter().append("tr");
 
-	// create cells
-	var td = tr.selectAll("td").data(function(d){return d3.values(d);});	
+	
+var td = tr.selectAll("td").data(function(d){return d3.values(d);});	
 	td.enter().append("td")
-		.text(function(d) {return d;})
-    .on("mouseover", function(a,c,b){
+	.text(function(d) {return d;})
+	.on("mouseover", function(a,c,b){
 			b = b+1
-			d3.select("tbody").selectAll("tr:nth-child(" + b +")").style("background-color", "yellow");})
-		.on("mouseout", function(a,c,b){
+			d3.select("tbody").selectAll("tr:nth-child(" + b +")")
+			.style("background-color", "yellow");})
+
+
+	.on("mouseout", function(a,c,b){
 			b = b+1
-			d3.select("tbody").selectAll("tr:nth-child(" + b +")").style("background-color", "");})
+			d3.select("tbody").selectAll("tr:nth-child(" + b +")")
+			.style("background-color", "");})
     		.on("click", function(a,c,b){
 			b = b+1
-			d3.select("tbody").selectAll("tr:nth-child(" + b +")").style("background-color", "green");});
+			d3.select("tbody").selectAll("tr:nth-child(" + b +")")
+			.style("background-color", "green");});
+
 	
-	//update?
 	if(sortOn !== null) {			
-			// update rows
 			if(sortOn != previousSort){
 				tr.sort(function(a,b){return sort(a[sortOn], b[sortOn]);});
 				previousSort = sortOn;
@@ -83,7 +92,6 @@ function refreshTable(sortOn){
 				previousSort = null;
 			}
 			
-			//update cells
 			td.text(function(d) {return d;});
 	}
 }
@@ -106,7 +114,7 @@ function sort(a,b){
 		return b ? 1 : a ? -1 : 0;
 	}
 }
-}//]]>  
+}
 
 </script>
 </head>
