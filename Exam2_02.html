@@ -75,7 +75,7 @@ var td = tr.selectAll("td").data(function(d){return d3.values(d);});
 	.on("mouseout", function(a,c,b){
 			b = b+1
 			d3.select("tbody").selectAll("tr:nth-child(" + b +")")
-			.style("background-color", "");})
+			//.style("background-color", "");})
     		.on("click", function(a,c,b){
 			b = b+1
 			d3.select("tbody").selectAll("tr:nth-child(" + b +")")
