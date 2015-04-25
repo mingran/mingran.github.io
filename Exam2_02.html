@@ -62,14 +62,14 @@ refreshTable(null);
 
 function refreshTable(sortOn){
 
-	
+	// create the table header
 	var thead = d3.select("thead").selectAll("th")
 		.data(d3.keys(jsonData[0]))
 		.enter().append("th").text(function(d){return d;})
 		.style("background-color", "#b8bebe")
 		.on("click", function(d, i){
 			i=i+1;
-           console.log(i)
+           console.log(d)
            d3.select("thead").selectAll("th")
           .style("background-color","#b8bebe")
           d3.select("thead").selectAll("th:nth-child(" + i +")")
@@ -78,11 +78,12 @@ function refreshTable(sortOn){
 		 return refreshTable(d);})
 		;;
 		
-	
+	// fill the table	
+	// create rows
 	var tr = d3.select("tbody").selectAll("tr").data(jsonData);	
 	tr.enter().append("tr");
 
-	
+	// create cells
 	var td = tr.selectAll("td").data(function(d){return d3.values(d);});	
 	td.enter().append("td")
 		.text(function(d) {return d;})
@@ -117,19 +118,19 @@ function refreshTable(sortOn){
 			.style("background-color", "green");});
 
 	
-	
+	//update?
 	if(sortOn !== null) {			
-			
+			// update rows
 			if(sortOn != previousSort){
-				tr.sort(function(a,b){return sort(a[sortOn], b[sortOn]);});
+				jsonData.sort(function(a,b){return sort(a[sortOn], b[sortOn]);});
 				previousSort = sortOn;
 			}
 			else{
-				tr.sort(function(a,b){return sort(b[sortOn], a[sortOn]);});
+				jsonData.sort(function(a,b){return sort(b[sortOn], a[sortOn]);});
 				previousSort = null;
 			}
 			
-			
+			//update cells
 			td.text(function(d) {return d;});
 	}
 }
